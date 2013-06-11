@@ -42,5 +42,6 @@ then
 else
 	echo "no changes..."
 fi
+
 rm $localcopy
 mv $onlinecopy $localcopy

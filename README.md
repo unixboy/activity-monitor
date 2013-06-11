@@ -1,6 +1,8 @@
 # Activity Monitor
 
-Simple activity monitor for HTTP resources.
+The idea is simply to monitor content changes on HTTP resources.
+If executed as a cronjob it will notify you once changes on a
+certain resource occur.
 
 
 # Usage
@@ -17,12 +19,12 @@ Add to your cronjob file:
 	0 */12 * * * (cd /path/to/activity-monitor/ && /bin/sh ./12-hrs.sh)
 	0 */4 * * * (cd /path/to/activity-monitor/ && /bin/sh ./4-hrs.sh)
 
-You can then go on to add resources you want to monitor to the files
+You can then go on, adding resources you want to monitor to the files
 `15-min.sh`, `12-hrs.sh`, `4-hrs.sh`:
 	
 	./check-for-changes.sh \
 		"alice@mail.de" \
-		"http://some-resource.net/index.html" \
+		"http://some-resource.net/index.html" 
 
 Or with preprocessing of content:
 
@@ -30,6 +32,24 @@ Or with preprocessing of content:
 		"alice@mail.de" \
 		"http://some-resource.net/index.html" \
 		"preprocess/only-body.sh"
+
+
+# Use Cases
+
+ * Product in Online-Shop is out of stock. Notify me, once it is available again
+ * University lecture. Notify me, once new news/exercises/etc. are put on the lecture website
+ * Usenet Search. Want to be notified when certain files are available and can be found via a Usenet search site.
+ * Event registration. I monitored a Barcamp website to get notified, once the registration was available.
+ * Monitor changes on certain Wiki pages.
+ * Regularly check if something can be ordered now.
+ * Monitor changes to Etherpad.
+ * Monitor changes on databases. Some projects offer a HTTP API (e.g.  OpenStreetMap). Regularly exporting the database file and running diffs against it shows changes.
+ * Monitor newly created mailinglists at university.
+
+
+# Not (yet?) support
+
+ * If a login is necessary before a resource can be fetched
 
 
 # License
@@ -56,5 +76,4 @@ Or with preprocessing of content:
 	LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 	OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 

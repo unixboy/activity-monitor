@@ -1,7 +1,7 @@
 # Activity Monitor
 
-The idea is simply to monitor content changes on HTTP resources.
-If executed as a cronjob it will notify you once changes on a
+The idea is to monitor content changes on HTTP resources.
+If executed as a cronjob the script will notify you once changes on a
 certain resource occur.
 
 
@@ -47,7 +47,7 @@ Or with preprocessing of content:
  * Monitor newly created mailinglists at university.
 
 
-# Not (yet?) support
+# Not (yet?) supported
 
  * If a login is necessary before a resource can be fetched
 

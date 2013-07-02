@@ -1,3 +1,3 @@
 #!/bin/sh
 
-awk '/\<body/ {flag=1;next} /\<div id="footer"\>/{flag=0} flag { print }' 
+awk '/\<body/ {flag=1;next} /\<!-- Saved in parser cache/{flag=0} flag { print }' 

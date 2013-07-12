@@ -4,6 +4,10 @@ The idea is to monitor content changes on HTTP resources.
 If executed as a cronjob the script will notify you once changes on a
 certain resource occur.
 
+At the moment there is still an external dependency on
+[http://www.fourmilab.ch/webtools/qprint/](qprint), due to some problems
+with the BSD mail version and encoding (mail hangs on certain encodings).
+
 
 # Usage
 

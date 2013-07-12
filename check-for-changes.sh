@@ -38,7 +38,7 @@ fi
 if ! cmp -s $onlinecopy $localcopy; 
 then
 	echo "sending mail.."
-	diff $onlinecopy $localcopy | mail -s "[Notification] Changes ${2}" ${1}
+	diff $onlinecopy $localcopy | qprint -e | mail -s "[Notification] Changes ${2}" ${1} 
 else
 	echo "no changes..."
 fi
